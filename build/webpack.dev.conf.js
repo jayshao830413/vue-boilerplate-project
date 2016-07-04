@@ -28,7 +28,8 @@ module.exports = merge(baseWebpackConfig, {
     new webpack.ProvidePlugin({
       'Vue': 'vue',
       'lodash': 'lodash',
-      'VueRouter': 'vue-router'
+      'VueRouter': 'vue-router',
+      'jQuery': 'jquery'
     }),
     // https://github.com/ampedandwired/html-webpack-plugin
     new HtmlWebpackPlugin({

@@ -1,6 +1,6 @@
 <template>
   <div id="wrapper">
-    <div id="header">header</div>
+    <Navbar></Navbar>
     <!-- main view -->
     <router-view>
     </router-view>
@@ -8,7 +8,9 @@
 </template>
 
 <script>
+import Navbar from './components/header/header'
 export default {
+  components: { Navbar },
   data() {
     return {
 
