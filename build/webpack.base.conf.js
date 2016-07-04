@@ -6,7 +6,7 @@ var projectRoot = path.resolve(__dirname, '../')
 module.exports = {
   entry: {
     app: './src/main.js',
-    vendor: ['lodash', 'vue', 'vue-router']
+    vendor: ['lodash', 'vue', 'vue-router','jquery']
   },
   output: {
     path: config.build.assetsRoot,
