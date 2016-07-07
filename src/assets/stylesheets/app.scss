@@ -1,0 +1,47 @@
+@import './mixin.scss';
+@import './reset.scss';
+
+html {
+    font-size: 62.5% !important;
+}
+body {
+    background-color: #fcfcfc;
+    
+    overflow: auto;
+    @extend %body-font;
+}
+
+.big-button {
+    width: 100%;
+    height: 4rem;
+    background-color: $orange-color !important;
+    border: 0px !important;
+    color: white !important;
+    margin-bottom: 1rem;
+    margin-top: 1rem;
+    font-size: 1.8rem !important;
+    outline: none !important;
+    border-radius: 0px;
+    &:hover {
+        @include box-shadow(0 -4px 0 $orange-color inset);
+        margin-top: 0.8rem;
+        height: 4.4rem;
+        background-color: $orange-color !important;
+        color: white !important;
+        border-color: $gray-border !important;
+    }
+    &:focus {
+        color: #fff;
+    }
+}
+
+@media screen and (min-width: 769px) and (max-width: 1024px) {
+    body {
+        font-size: 80% !important;
+    }
+}
+@media screen and (min-width: 460px) and (max-width: 768px) {
+    body {
+        font-size: 50% !important;
+    }
+}

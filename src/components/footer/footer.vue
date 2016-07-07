@@ -1,4 +1,4 @@
-<template src='./header.html'>
+<template src='./footer.html'>
 </template>
 <script>
 	export default {
@@ -9,6 +9,5 @@
 		}
 	}
 </script>
-<style lang="scss" src='./header.scss' scoped>
-	
+<style lang="scss" src='./footer.scss' scoped>
 </style>

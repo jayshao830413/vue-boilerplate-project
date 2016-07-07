@@ -2,13 +2,18 @@
 import App from './App'
 import VueRouter from 'vue-router'
 import Login from './pages/login/login'
+import VueValidator from 'vue-validator'
 
+Vue.use(VueValidator)
 Vue.use(VueRouter)
 
 // Create a router instance.
 // You can pass in additional options here, but let's
 // keep it simple for now.
-var router = new VueRouter()
+var router = new VueRouter({
+	history: false,
+	root: '/login'
+})
 
 // Define some routes.
 // Each route should map to a component. The "component" can
@@ -17,8 +22,13 @@ var router = new VueRouter()
 // We'll talk about nested routes later.
 router.map({
 	'/login': {
+		name: 'login',
 		component: Login
-	}
+	},
+})
+
+router.redirect({
+	'*': '/login'
 })
 
 // Now we can start the app!

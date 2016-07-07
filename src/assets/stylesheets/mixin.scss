@@ -1,0 +1,89 @@
+%body-font {
+	font-family: 'helvetica-neue-regular-webfont';
+	color: #3f4040;
+}
+
+// prefixer
+$prefix-for-webkit: true !default;
+$prefix-for-mozilla: true !default;
+$prefix-for-microsoft: true !default;
+$prefix-for-opera: true !default;
+$prefix-for-spec: true !default;
+
+.font-semibold {
+    font-family: 'helvetica-neue-regular-webfont';
+}
+
+.font-regular {
+    font-family: 'helvetica-neue-regular-webfont';
+}
+
+.font-bold {
+    font-family: 'helvetica-neue-bold-webfont'
+}
+
+// color
+$gray-border: #e4e4e4;
+$orange-color: #EB8C00;
+
+//----------------------------
+@mixin prefixer ($property, $value, $prefixes) {
+    @each $prefix in $prefixes {
+        @if $prefix==webkit and $prefix-for-webkit==true {
+            -webkit-#{$property}: $value;
+        }
+        @else if $prefix==moz and $prefix-for-mozilla==true {
+            -moz-#{$property}: $value;
+        }
+        @else if $prefix==ms and $prefix-for-microsoft==true {
+            -ms-#{$property}: $value;
+        }
+        @else if $prefix==o and $prefix-for-opera==true {
+            -o-#{$property}: $value;
+        }
+        @else if $prefix==spec and $prefix-for-spec==true {
+            #{$property}: $value;
+        }
+        @else {
+            @warn "Unrecognized prefix: #{$prefix}";
+        }
+    }
+}
+
+@mixin box-shadow($shadow...) {
+    @include prefixer(box-shadow, $shadow, webkit moz o ms spec);
+}
+
+@mixin box-sizing($type:border-box) {
+    // border-box | padding-box | content-box
+    @include prefixer(box-sizing, $type, webkit moz o ms spec);
+}
+
+@mixin transform($property...) {
+    @include prefixer(transform, $property, webkit moz o ms spec);
+}
+
+@mixin transition($property...) {
+    @include prefixer(transition, $property, webkit moz o ms spec);
+}
+
+@mixin border-radius($width...) {
+    @include prefixer(border-radius, $width, webkit moz o ms spec);
+}
+
+@mixin screen-center($selfWidth, $selfHeight, $horizontalOffset, $verticalOffset) {
+    @include vertical-center($selfHeight, $verticalOffset);
+    @include horizontal-center($selfWidth, $horizontalOffset);
+}
+
+@mixin vertical-center($selfHeight, $verticalOffset) {
+    position: relative;
+    top: 50%;
+    margin-top: -($selfHeight + $verticalOffset)/2;
+}
+
+@mixin horizontal-center($selfWith, $horizontalOffset) {
+    position: relative;
+    left: 50%;
+    margin-left: -($selfWith + $horizontalOffset)/2; // self.width/2
+}
