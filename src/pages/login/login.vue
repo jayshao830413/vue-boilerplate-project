@@ -3,12 +3,22 @@
 	export default {
 		data() {
 			return {
+				formIsInvalid: false,
 				loginUser: {}
 			}
 		},
+		created: function() {
+			console.log("created");
+		},
 		methods: {
-			login: function() {
-				
+			onLogin: function() {
+				var self = this;
+				if(self.$loginValidation.invalid) {
+					self.formIsInvalid = true;
+				} else {
+					self.formIsInvalid = false;
+					// form is valid so confinue on your work
+				}
 			}
 		} 
 	}

@@ -1,13 +1,18 @@
 @import '../../assets/stylesheets/mixin.scss';
 #login-page {
-    font-family: 'sans-serif' !important;
+    font-family: sans-serif !important;
     .error-messages {
-        width: 38rem;
-        border: 1px solid;
+        width: 90%;
         margin: 0 auto;
-        margin-top: 2rem;
-        border: 0.6rem solid rgba(216, 221, 227, 0.9);
-        border-radius: 0.4rem;
+        margin-bottom: 2rem;
+        text-align: center;
+        font-family: 'Open Sans', sans-serif;
+        font-size: 1.4rem;
+        background-color: $orange-color;
+        .error-message {
+            color: white;
+            line-height: 40px;
+        }
     }
     .login-container {
         position: absolute;
