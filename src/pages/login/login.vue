@@ -1,14 +1,19 @@
 <template src="./login.html"></template>
 <script>
+	import auth from '../../services/auth'
+	
 	export default {
 		data() {
 			return {
 				formIsInvalid: false,
-				loginUser: {}
+				loginUser: {
+					username: '',
+					password: ''
+				}
 			}
 		},
-		created: function() {
-			console.log("created");
+		ready: function() {
+			console.log("ready");
 		},
 		methods: {
 			onLogin: function() {
@@ -17,7 +22,12 @@
 					self.formIsInvalid = true;
 				} else {
 					self.formIsInvalid = false;
+					var credentials = {
+						username: this.loginUser.username,
+						password: this.loginUser.password
+					}
 					// form is valid so confinue on your work
+					auth.login(this, credentials, 'secretquote')
 				}
 			}
 		} 

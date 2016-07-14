@@ -2,9 +2,11 @@
 import App from './App'
 import VueRouter from 'vue-router'
 import Login from './pages/login/login'
+import VueResource from 'vue-resource'
 import VueValidator from 'vue-validator'
 import FontAwesomeWebpack from 'font-awesome-webpack'
 
+Vue.use(VueResource)
 Vue.use(VueValidator)
 Vue.use(VueRouter)
 

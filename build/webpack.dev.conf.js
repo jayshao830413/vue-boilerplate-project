@@ -6,7 +6,7 @@ var baseWebpackConfig = require('./webpack.base.conf')
 var HtmlWebpackPlugin = require('html-webpack-plugin')
 
 // add hot-reload related code to entry chunks
-Object.keys(baseWebpackConfig.entry).forEach(function (name) {
+Object.keys(baseWebpackConfig.entry).forEach(function(name) {
   baseWebpackConfig.entry[name] = ['./build/dev-client'].concat(baseWebpackConfig.entry[name])
 })
 
@@ -29,7 +29,13 @@ module.exports = merge(baseWebpackConfig, {
       'Vue': 'vue',
       'lodash': 'lodash',
       'VueRouter': 'vue-router',
-      'jQuery': 'jquery'
+      $: 'jquery',
+      jQuery: 'jquery',
+      'window.jQuery': 'jquery',
+      'window.$': 'jquery',
+      'window.jquery': 'jquery',
+      jquery: 'jquery',
+      jquery: 'jQuery'
     }),
     // https://github.com/ampedandwired/html-webpack-plugin
     new HtmlWebpackPlugin({

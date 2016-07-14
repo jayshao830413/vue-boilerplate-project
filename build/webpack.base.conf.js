@@ -7,7 +7,7 @@ module.exports = {
   entry: {
     app: './src/main.js',
     bootstrapLoader: 'bootstrap-loader',
-    vendor: ['lodash', 'vue', 'vue-router','jQuery']
+    vendor: ['lodash', 'vue', 'vue-router','jquery']
   },
   output: {
     path: config.build.assetsRoot,
