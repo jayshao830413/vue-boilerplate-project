@@ -9,6 +9,7 @@ import FontAwesomeWebpack from 'font-awesome-webpack'
 Vue.use(VueResource)
 Vue.use(VueValidator)
 Vue.use(VueRouter)
+// Vue.http.options.root = '/api';
 
 // Create a router instance.
 // You can pass in additional options here, but let's

@@ -19,6 +19,11 @@ module.exports = {
   dev: {
     env: require('./dev.env'),
     port: 8085,
-    proxyTable: {}
+    proxyTable: {
+      // proxy all requests starting with /api to jsonplaceholder
+      '/api/': {
+        target: 'http://localhost:8083'
+      }
+    }
   }
 }

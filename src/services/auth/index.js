@@ -1,8 +1,8 @@
 import { router } from '../../main'
 
 // URL and endpoint constants
-const API_URL = 'http://localhost:3000/'
-const LOGIN_URL = API_URL + 'sessions/create'
+const API_URL = '/api/'
+const LOGIN_URL = API_URL + 'login'
 const SIGNUP_URL = API_URL + 'users/'
 
 export default {
@@ -13,8 +13,8 @@ export default {
 
   // Send a request to the login URL and save the returned JWT
   login(context, creds, redirect) {
-    debugger;
     context.$http.post(LOGIN_URL, creds).then((data) => {
+      debugger;
       localStorage.setItem('id_token', data.id_token)
       this.user.authenticated = true;
 
