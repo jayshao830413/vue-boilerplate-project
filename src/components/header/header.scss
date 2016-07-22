@@ -1,27 +1,43 @@
 @import '../../assets/stylesheets/mixin.scss';
-
 .navbar {
-	background-color: black;
-	border: 0px;
-	border-radius: 0px;
-	.logo {
-		background-image: url("../../assets/images/PwCLogo.png");
-		background-repeat: no-repeat;
-		background-position: center;
-		height: 6rem;
-		width: 9rem;
-		background-size: 6rem;
-		background-color: $orange-color;
-	};
+    background-color: black;
+    border: 0px;
+    border-radius: 0px;
+    .logo {
+        background-image: url("../../assets/images/PwCLogo.png");
+        background-repeat: no-repeat;
+        background-position: center;
+        height: 6rem;
+        width: 9rem;
+        background-size: 6rem;
+        background-color: $orange-color;
+    }
+    ;
+    .project-name {
+        color: white;
+        margin-left: 3rem;
+        font-size: 3rem;
+        line-height: 6rem;
+        height: 6rem;
+        @extend .font-bold;
+        font-weight: bold;
+        font-style: italic;
+    }
+    .login-info {
+        font-size: 1.4rem;
+        line-height: 6rem;
+        color: white;
+        .splitter {
+            font-size: 3rem;
+            margin-left: 1rem;
+            margin-right: 1rem;
+        }
 
-	.project-name {
-		color: white;
-		margin-left: 3rem;
-		font-size: 3rem;
-		line-height: 6rem;
-		height: 6rem;
-		@extend .font-bold;
-		font-weight: bold;
-		font-style: italic;
-	}
+        .logout {
+        	cursor: pointer;
+        	&:hover {
+        		color: $orange-color;
+        	}
+        }
+    }
 }

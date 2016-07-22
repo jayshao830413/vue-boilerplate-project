@@ -1,6 +1,7 @@
 <template src="./login.html"></template>
 <script>
 	import auth from '../../services/auth'
+	import { userLogin } from '../../vuex/actions'
 	
 	export default {
 		data() {
@@ -12,12 +13,18 @@
 				}
 			}
 		},
+		vuex: {
+			actions: {
+				loggedInUser: userLogin 
+			}
+		},
 		ready: function() {
 			console.log("ready");
 		},
 		methods: {
 			onLogin: function() {
-				var self = this;
+				var self = this
+				debugger
 				if(self.$loginValidation.invalid) {
 					self.formIsInvalid = true;
 				} else {
@@ -27,7 +34,7 @@
 						password: this.loginUser.password
 					}
 					// form is valid so confinue on your work
-					auth.login(this, credentials, 'secretquote')
+					auth.login(this, credentials, 'dashboard')
 				}
 			}
 		} 

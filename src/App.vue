@@ -11,12 +11,22 @@
 <script>
 import AppNavbar from './components/header/header'
 import AppFooter from './components/footer/footer'
+import Auth from './services/auth/index.js'
+import store from './vuex/store'
 export default {
   components: { AppNavbar, AppFooter },
+  store: store,
   data() {
     return {
-
+      isLoggedIn: false,
     }
+  },
+  computed: {
+    auth: function () {
+      return Auth
+    }
+  },
+  ready() {
   }
 }
 </script>

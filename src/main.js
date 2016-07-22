@@ -2,9 +2,11 @@
 import App from './App'
 import VueRouter from 'vue-router'
 import Login from './pages/login/login'
+import Dashboard from './pages/dashboard/dashboard'
 import VueResource from 'vue-resource'
 import VueValidator from 'vue-validator'
 import FontAwesomeWebpack from 'font-awesome-webpack'
+import Auth from './services/auth'
 
 Vue.use(VueResource)
 Vue.use(VueValidator)
@@ -14,9 +16,26 @@ Vue.use(VueRouter)
 // Create a router instance.
 // You can pass in additional options here, but let's
 // keep it simple for now.
-var router = new VueRouter({
+export var router = new VueRouter({
 	history: false,
 	root: '/login'
+})
+
+router.beforeEach(function (transition) {
+	//check is refresh
+	if(transition.to.name === "login") {
+		if(!Auth.checkAuth()) {
+			transition.next()
+		} else {
+			transition.abort()
+		}
+	} else {
+		if(!Auth.checkAuth()) {
+			transition.redirect('/login')
+		} else {
+			transition.next()
+		}
+	}
 })
 
 // Define some routes.
@@ -27,13 +46,21 @@ var router = new VueRouter({
 router.map({
 	'/login': {
 		name: 'login',
-		component: Login
+		component: Login,
+		auth: true
 	},
+	'/dashboard': {
+		name: 'dashboard',
+		component: Dashboard,
+		auth: true
+	}
 })
 
 router.redirect({
 	'*': '/login'
 })
+
+
 
 // Now we can start the app!
 // The router will create an instance of App and mount to

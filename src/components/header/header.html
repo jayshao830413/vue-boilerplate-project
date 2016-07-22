@@ -1,4 +1,7 @@
 <nav class="navbar navbar-default">
   <div class="logo pull-left"></div>
   <div class="project-name pull-left">Vue Project Demo</div>
+  <div class="login-info pull-right" v-show="user.authenticated">
+  	<span>Welcome, {{user.name}}</span><span class="splitter">|</span><span class="logout" @click="logout">logout</span>
+  </div>
 </nav>
