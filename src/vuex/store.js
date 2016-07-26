@@ -11,7 +11,6 @@ const state = {
 
 const mutations = {
   ADD_NOTE(state) {
-    debugger
     const newNote = {
       text: 'New Note',
       favorite: false
@@ -30,7 +29,6 @@ const mutations = {
   },
 
   TOGGLE_FAVORITE(state) {
-    debugger
     state.activeNote.favorite = !state.activeNote.favorite
   },
 
