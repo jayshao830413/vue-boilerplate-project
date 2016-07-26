@@ -1,4 +1,5 @@
 export const addNote = function (store) {
+	debugger
 	var dispatch = store.dispatch
 	dispatch('ADD_NOTE')
 }

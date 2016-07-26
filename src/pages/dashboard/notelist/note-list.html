@@ -1,19 +1,23 @@
 <div id="notes-list">
-	<div id="list-header">
-		<h2>Notes | coligo</h2>
-		<div class="btn-group">
-			<button type="button" class="btn btn-default">All Notes</button>
-			<button type="button" class="btn btn-default">Favorites</button>
-		</div>
-		<!-- render note in a list -->
-		<div class="container">
-			<div class="list-group">
-				<a v-for="note in filteredNotes" class="list-group-item" href="#">
-					<h4 class="list-group-item-heading">
+    <div id="list-header">
+        <h2>Notes | coligo</h2>
+        <div class="btn-group">
+            <button type="button" class="btn btn-default" @click="show = 'all'" :class="{active: show === 'all'}">
+                All Notes
+            </button>
+            <button type="button" class="btn btn-default" @click="show = 'favorites'" :class="{active: show === 'favorites'}">
+                Favorites
+            </button>
+        </div>
+    </div>
+    <!-- render note in a list -->
+    <div class="container">
+        <div class="list-group">
+            <a v-for="note in filteredNotes" class="list-group-item" href="#" :class="{active: activeNote === note}" @click="updateActiveNote(note)">
+                <h4 class="list-group-item-heading">
 						{{ note.text.trim().substring(0, 30)}}
 					</h4>
-				</a>
-			</div>
-		</div>
-	</div>
+            </a>
+        </div>
+    </div>
 </div>

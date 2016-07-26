@@ -3,10 +3,8 @@
 	import { addNote, deleteNote, toggleFavorite } from "../../../vuex/actions.js"
 	export default {
 		vuex: {
-			getter: {
-				activeNote: function(state) {
-					return state.acitveNote
-				}
+			getters: {
+				activeNote: state => state.activeNote
 			},
 			actions: {
 				addNote,

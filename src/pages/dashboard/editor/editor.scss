@@ -6,7 +6,10 @@
         height: 100%;
         border: 0;
         border-radius: 0;
-        width: calc(100% - 300px - 80px);
+        width: calc(100% - 300px - 90px);
         font-size: 14px;
+        &:focus {
+        	outline-color: white;
+        }
     }
 }
