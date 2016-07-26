@@ -1,0 +1,5 @@
+<div id="toolbar">
+    <i @click="addNote" class="fa fa-plus"></i>
+    <i @click="toggleFavorite" :class="{starred: activeNote.favorite}" class="fa fa-star"></i>
+    <i @click="deleteNote" class="fa fa-times"></i>
+</div>

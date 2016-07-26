@@ -1,5 +1,5 @@
 <template>
-  <div id="wrapper">
+  <div id="app">
     <app-navbar></app-navbar>
     <!-- main view -->
     <router-view>
@@ -31,6 +31,10 @@ export default {
 }
 </script>
 
-<style lang="sass">
-  @import '../src/assets/stylesheets/app.scss'
+<style lang="scss">
+  @import '../src/assets/stylesheets/app.scss';
+  #app {
+    height: 100%;
+    max-height: 100%;
+  }
 </style>

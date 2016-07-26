@@ -2,11 +2,14 @@
 @import './reset.scss';
 
 html {
+    height: 100%;
     font-size: 62.5% !important;
 }
 body {
     background-color: #fcfcfc;
-    
+    height: 100%;
+    max-height: 100%;
+    position: relative;
     overflow: auto;
     @extend %body-font;
 }

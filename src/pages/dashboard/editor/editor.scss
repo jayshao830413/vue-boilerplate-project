@@ -1,0 +1,12 @@
+#note-editor {
+    height: 100%;
+    margin-left: 380px;
+    width: 100%;
+    textarea {
+        height: 100%;
+        border: 0;
+        border-radius: 0;
+        width: calc(100% - 300px - 80px);
+        font-size: 14px;
+    }
+}

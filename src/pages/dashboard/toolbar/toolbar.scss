@@ -1,0 +1,22 @@
+#toolbar {
+    float: left;
+    width: 90px;
+    height: 100%;
+    background-color: black;
+    color: white;
+    padding: 35px 25px 25px 25px;
+    text-align: center;
+    i {
+        font-size: 30px;
+        margin-bottom: 35px;
+        cursor: pointer;
+        opacity: 0.4;
+        transition: opacity 0.5s ease;
+        &:hover {
+            opacity: 1
+        }
+    }
+    .starred {
+        color: #F7AE4F;
+    }
+}
