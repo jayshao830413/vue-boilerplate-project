@@ -35,7 +35,7 @@ const mutations = {
   },
 
   SET_ACTIVE_NOTE(state, note) {
-    state.activeNote = state
+    state.activeNote = note
   }
 }
 
