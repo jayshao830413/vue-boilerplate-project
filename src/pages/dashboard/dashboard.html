@@ -1,1 +1,12 @@
 <h1>Dashboard</h1>
+<form id="search">
+  Search
+  <input name="query" v-model="searchQuery">
+</form>
+<demo-table 
+	:data="gridData" 
+	:columns="gridColumns" 
+	:filter-key="searchQuery">
+</demo-table>
+<child v-on:child-msg="handleIt"></child>
+<p>Messages: {{ messages | json }}</p>
